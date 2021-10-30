@@ -95,24 +95,6 @@ async def plot(ctx, *, txt):
             await ctx.channel.send(link)
 
 
-@bot.command()
-async def ceva_deep(ctx):
-
-    file = open("citate.txt", "r")
-
-    lines = file.readlines()
-    indice = random.randint(1, 729)
-    random_line = lines[indice]
-
-    if random_line == "\n":
-        random_line = lines[indice-1]
-
-    poz1 = random_line.find(".") + 2
-    poz2 = random_line.find("_") - 1
-    random_line = random_line[poz1: poz2]
-
-    await ctx.send(random_line)
-
 """
 @bot.command()
 async def exec(ctx, *, command):
@@ -231,5 +213,6 @@ async def aparitii(ctx, mesaj):
     await channel.send('Utilizarile cuvantului "'+mesaj+'" in canalul "'+nume_canal+'".')
     await channel.send(file=file)
 
+token = ''  # Your client token
 
-bot.run("Nzc4NTU0MTE3MzkxNjQ2NzUw.X7TrBg.Sq6EKAb3AU9lz1TQ36m2666d_mI")
+bot.run(token)
